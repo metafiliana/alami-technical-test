@@ -1,0 +1,121 @@
+{
+	"info": {
+		"_postman_id": "01479e1d-165f-40b7-8c7c-08c77f9783d8",
+		"name": "ALAMI Spring Boot test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get all members",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/api/members?name=afil",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"members"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "afil"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create member",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"metafiliana\",\n    \"dob\": \"1994-12-20\",\n    \"address\": \"marga asri II A83\",\n    \"nik\": \"123123131112\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/members",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"members"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create transaction",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"memberId\": 2,\n    \"state\": 1,\n    \"value\": 1500000\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/fund-transactions",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"fund-transactions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get transactions history",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/api/fund-transactions/histories?startDate=2022-05-20&endDate=2022-05-22",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"fund-transactions",
+						"histories"
+					],
+					"query": [
+						{
+							"key": "startDate",
+							"value": "2022-05-20"
+						},
+						{
+							"key": "endDate",
+							"value": "2022-05-22"
+						},
+						{
+							"key": "memberId",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
